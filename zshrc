@@ -99,3 +99,6 @@ export PATH="/Users/jules/Library/Haskell/bin:/Users/jules/.cabal/bin:/Applicati
 # For some reason irssi doesn't work with the default xterm settings so I'm aliasing it here
 alias irssi='TERM=screen-256color irssi'
 eval "$( HALCYON_NO_SELF_UPDATE=1 "/app/halcyon/halcyon" paths )"
+
+# THE AREA BELOW IS RESERVED FOR TEMPORARY VARIABLES ONLY
+alias spree_f='/usr/local/lib/ruby/gems/2.2.0/gems/spree_frontend-3.0.4'
