@@ -51,31 +51,23 @@ source $ZSH/oh-my-zsh.sh
 
 # Prompt
 # export PS1="ジュルズ %c %*  %F{yellow}♕%F{cyan}   "
-
 # Pythonpath
 export PYTHONPATH="/usr/local/Cellar/vips/7.42.3/lib/python2.7/site-packages"
-
 # TERM settings
 export TERM="screen-256color"
-
 # Some aliases:
-
 # Because I'm silly
 alias cmatrix="cmatrix -C cyan"
-
 # Alias hub to git
 eval "$(hub alias -s)"
-
 # To start PostgreSQL server ("ctpg" + "start" or "stop")
 alias ctps="pg_ctl -D /usr/local/pgsql"
-
 # Projects folder alias
 alias proj="/Users/jules/projects/"
-
 # Better "ls"
 alias ll="ls -lhFA"
-
 alias XOChrome="open -a 'Google Chrome' --args -allow-file-access-from-files"
+alias grep="grep -i"
 
 RIES="chaseries@192.34.59.235"
 RBG="ashenrose@104.236.103.218"
