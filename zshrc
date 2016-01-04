@@ -49,14 +49,6 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
-# Commenting this out to save it before I rewrite it so I don't fuck myself.
-# I don't see how I could because everything save /usr/local/git/bin is redundant
-# to what's in /private/etc/paths and wtf hairbrained reason did I add /usr/local/git/bin
-# to my path anyway? Still gonna leave it here for the time being until something breaks
-# export PATH=/usr/local/bin:$PATH:/usr/local/git/bin:/usr/bin:/bin:/usr/sbin:/sbin
-
-
 # Prompt
 # export PS1="ジュルズ %c %*  %F{yellow}♕%F{cyan}   "
 
@@ -88,17 +80,10 @@ alias XOChrome="open -a 'Google Chrome' --args -allow-file-access-from-files"
 RIES="chaseries@192.34.59.235"
 RBG="ashenrose@104.236.103.218"
 RBGip="104.236.103.218"
-
-# Add GHC 7.10.1 to the PATH, via https://ghcformacosx.github.io/
-export GHC_DOT_APP="/Applications/ghc-7.10.1.app"
-
-# Super sloppy exports for Haskell...
-export PATH="${HOME}/.cabal/bin:/Applications/ghc-7.10.1.app/Contents/bin:${PATH}"
-export PATH="/Users/jules/Library/Haskell/bin:/Users/jules/.cabal/bin:/Applications/ghc-7.10.1.app/Contents/bin:$PATH"
+RBG2="159.203.99.186"
 
 # For some reason irssi doesn't work with the default xterm settings so I'm aliasing it here
 alias irssi='TERM=screen-256color irssi'
-eval "$( HALCYON_NO_SELF_UPDATE=1 "/app/halcyon/halcyon" paths )"
 
 # THE AREA BELOW IS RESERVED FOR TEMPORARY VARIABLES ONLY
 alias spree_f="/usr/local/lib/ruby/gems/2.2.0/gems/spree_frontend-3.0.4/"
