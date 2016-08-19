@@ -1,62 +1,51 @@
-# Default message on reload.
+#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
+# ZSH STUFF ZSH STUFF ZSH STUFF ZSH STUFF ZSH STUFF ZSH STUFF ZSH STUFF ZSH ST #
+#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
+
+ZSH=$HOME/.oh-my-zsh
+plugins=(git)
+source $ZSH/oh-my-zsh.sh
+
+
+#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
+# RELOAD MESSAGE RELOAD MESSAGE RELOAD MESSAGE RELOAD MESSAGE RELOAD MESSAGE R #
+#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
+
 echo "\n   Welcome to the shell."
 echo "   There is more to be seen than we have left behind,"
 echo "   But in truth, only atoms and the void.\n"
 
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
+#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
+# PATH PATH PATH PATH PATH PATH PATH PATH PATH PATH PATH PATH PATH PATH PATH P #
+#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
 
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+export PATH=$HOME/bin:$PATH:/Users/jules/.local/bin:$HOME/:/Users/jules/Library/Haskell/bin
 
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
 
-# Comment this out to disable bi-weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
+#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
+# PYTHON PYTHON PYTHON PYTHON PYTHON PYTHON PYTHON PYTHON PYTHON PYTHON PYTHON #
+#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
+alias python="/usr/local/bin/python3"
 
-# Uncomment to change how often before auto-updates occur? (in days)
-# export UPDATE_ZSH_DAYS=13
+# Python path for VIPS usage.
+# export PYTHONPATH="/usr/local/Cellar/vips/7.42.3/lib/python2.7/site-packages"
 
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
+#Python interactive session customization
+export PYTHONSTARTUP=$HOME/.python/python_startup.py
 
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
 
-# Uncomment following line if you want to disable command autocorrection
-# DISABLE_CORRECTION="true"
+#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
+# TERM TERM TERM TERM TERM TERM TERM TERM TERM TERM TERM TERM TERM TERM TERM T #
+#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
 
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment following line if you want to disable marking untracked files under
-# VCS as dirty. This makes repository status check for large repositories much,
-# much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-
-plugins=(git)
-
-source $ZSH/oh-my-zsh.sh
-
-# Prompt
-# export PS1="ジュルズ %c %*  %F{yellow}♕%F{cyan}   "
-# Pythonpath
-export PYTHONPATH="/usr/local/Cellar/vips/7.42.3/lib/python2.7/site-packages"
-# TERM settings
 export TERM="screen-256color"
-# Some aliases:
-# Because I'm silly
+
+
+#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
+# HELPFUL ALIASES HELPFUL ALIASES HELPFUL ALIASES HELPFUL ALIASES HELPFUL ALIA #
+#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
+
 alias cmatrix="cmatrix -C cyan"
 # Alias hub to git
 eval "$(hub alias -s)"
@@ -68,14 +57,39 @@ alias proj="/Users/jules/projects/"
 alias ll="ls -lhFA"
 alias XOChrome="open -a 'Google Chrome' --args -allow-file-access-from-files"
 alias grep="grep -i"
+# For some reason irssi doesn't work with the default xterm settings so I'm 
+# aliasing it here
+alias irssi='TERM=screen-256color irssi'
+# Shortcut to get to passwords file
+alias pw='cat ~/.pw/.passwords | grep -i -A'
+
+
+#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
+# SERVER ADDRESSES SERVER ADDRESSES SERVER ADDRESSES SERVER ADDRESSES SERVER A #
+#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
 
 RIES="chaseries@192.34.59.235"
 RBG="ashenrose@104.236.103.218"
 RBGip="104.236.103.218"
 RBG2="159.203.99.186"
+RR="45.55.173.69"
+EAGLE="104.236.57.64"
+FREEDOM="45.55.145.40"
+PERSONAL="162.243.78.100"
+ACAD="104.236.87.217"
 
-# For some reason irssi doesn't work with the default xterm settings so I'm aliasing it here
-alias irssi='TERM=screen-256color irssi'
+#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
+# PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT #
+#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
 
-# THE AREA BELOW IS RESERVED FOR TEMPORARY VARIABLES ONLY
-alias spree_f="/usr/local/lib/ruby/gems/2.2.0/gems/spree_frontend-3.0.4/"
+# Old version:
+# export PS1="ジュルズ %c %*  %F{yellow}♕%F{cyan}   "
+
+# export PS1="%ir:%1d "
+# export PROMPT="%{\e[0;36m%ジュルズ : %}%1d "
+export PROMPT=%{\e[0;35m%}%m%{\e[0m%}
+
+#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
+# TEMP VARS TEMP VARS TEMP VARS TEMP VARS TEMP VARS TEMP VARS TEMP VARS TEMP V #
+#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
+
