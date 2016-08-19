@@ -11,9 +11,11 @@ source $ZSH/oh-my-zsh.sh
 # RELOAD MESSAGE RELOAD MESSAGE RELOAD MESSAGE RELOAD MESSAGE RELOAD MESSAGE R #
 #$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
 
-echo "\n   Welcome to the shell."
-echo "   There is more to be seen than we have left behind,"
-echo "   But in truth, only atoms and the void.\n"
+autoload -U colors
+
+echo $fg[cyan]"\n   Welcome to the shell."
+echo          "   There is more to be seen than we have left behind,"
+echo          "   But in truth, only atoms and the void.\n"${reset_color}
 
 
 #$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
@@ -82,12 +84,33 @@ ACAD="104.236.87.217"
 # PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT #
 #$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
 
-# Old version:
-# export PS1="ジュルズ %c %*  %F{yellow}♕%F{cyan}   "
+# All info from `man zshmisc`
+# NB: Search "colour," not "color," for color expansion info
+# %c: pwd
+# %t: Current time
+# %F: Start changing foreground color
+# %f: Stop changing foreground color
+ 
+setopt prompt_subst
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' actionformats \
+    '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{3}|%F{1}%a%F{5}]%f '
+zstyle ':vcs_info:*' formats       \
+    '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{5}]%f '
+zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{3}%r'
 
-# export PS1="%ir:%1d "
-# export PROMPT="%{\e[0;36m%ジュルズ : %}%1d "
-export PROMPT=%{\e[0;35m%}%m%{\e[0m%}
+zstyle ':vcs_info:*' enable git cvs svn
+
+# or use pre_cmd, see man zshcontrib
+vcs_info_wrapper() {
+  vcs_info
+  if [ -n "$vcs_info_msg_0_" ]; then
+    echo "%{$fg[grey]%}${vcs_info_msg_0_}%{$reset_color%}$del"
+  fi
+}
+
+export PROMPT='ジュルズ in %c @%t  %F{15}♕%f  '
+export RPROMPT=$'$(vcs_info_wrapper)'
 
 #$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
 # TEMP VARS TEMP VARS TEMP VARS TEMP VARS TEMP VARS TEMP VARS TEMP VARS TEMP V #
