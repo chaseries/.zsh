@@ -121,7 +121,7 @@ precmd() {
 }
 zle-keymap-select() {
   export PROMPT='教会 in %c @%t  %F{15}⚆%f  '
-  [[ $KEYMAP = vicmd ]] && export PROMPT='教会 in %c @%t  %F{246}⚇%f  '
+  [[ $KEYMAP = vicmd ]] && export PROMPT='教会 in %c @%t  %F{243}⚇%f  '
   () { return $__prompt_status }
   zle reset-prompt
 }
