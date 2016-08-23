@@ -12,10 +12,19 @@ source $ZSH/oh-my-zsh.sh
 #$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
 
 autoload -U colors
+clear
+echo "\n   Welcome to the shell.▋"
+echo "\n   There is more to be seen than we have left behind,"
+echo "   but in truth, only atoms and the void.\n"
 
-echo $fg[cyan]"\n   Welcome to the shell."
-echo          "   There is more to be seen than we have left behind,"
-echo          "   But in truth, only atoms and the void.\n"${reset_color}
+
+#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
+# MAKE IT VIMMY MAKE IT VIMMY MAKE IT VIMMY MAKE IT VIMMY MAKE IT VIMMY MAKE I #
+#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
+
+bindkey -v
+bindkey -M viins 'jk' vi-cmd-mode
+export KEYTIMEOUT=10
 
 
 #$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
@@ -48,22 +57,19 @@ export TERM="screen-256color"
 # HELPFUL ALIASES HELPFUL ALIASES HELPFUL ALIASES HELPFUL ALIASES HELPFUL ALIA #
 #$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
 
+# Because why not
 alias cmatrix="cmatrix -C cyan"
-# Alias hub to git
-eval "$(hub alias -s)"
 # To start PostgreSQL server ("ctpg" + "start" or "stop")
 alias ctps="pg_ctl -D /usr/local/pgsql"
-# Projects folder alias
-alias proj="/Users/jules/projects/"
-# Better "ls"
-alias ll="ls -lhFA"
+# Open Chrome allowing cross-origin
 alias XOChrome="open -a 'Google Chrome' --args -allow-file-access-from-files"
+# Because default case-sensitive grep is annoying
 alias grep="grep -i"
 # For some reason irssi doesn't work with the default xterm settings so I'm 
 # aliasing it here
 alias irssi='TERM=screen-256color irssi'
-# Shortcut to get to passwords file
-alias pw='cat ~/.pw/.passwords | grep -i -A'
+# To lolcat?
+alias ll='ls -lhFA'
 
 
 #$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
@@ -109,7 +115,22 @@ vcs_info_wrapper() {
   fi
 }
 
-export PROMPT='ジュルズ in %c @%t  %F{15}♕%f  '
+# show which vim mode we are in
+precmd() {
+  export PROMPT='教会 in %c @%t  %F{15}⚆%f  '
+}
+zle-keymap-select() {
+  export PROMPT='教会 in %c @%t  %F{15}⚆%f  '
+  [[ $KEYMAP = vicmd ]] && export PROMPT='教会 in %c @%t  %F{246}⚇%f  '
+  () { return $__prompt_status }
+  zle reset-prompt
+}
+zle-line-init() {
+  typeset -g __prompt_status="$?"
+}
+zle -N zle-keymap-select
+zle -N zle-line-init
+
 export RPROMPT=$'$(vcs_info_wrapper)'
 
 #$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
