@@ -1,7 +1,6 @@
 
-#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
-# RELOAD MESSAGE RELOAD MESSAGE RELOAD MESSAGE RELOAD MESSAGE RELOAD MESSAGE R #
-#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
+
+# Reload message
 
 autoload -U colors
 clear
@@ -10,63 +9,29 @@ echo "\n   There is more to be seen than we have left behind,"
 echo "   but in truth, only atoms and the void.\n"
 
 
-#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
-# MAKE IT VIMMY MAKE IT VIMMY MAKE IT VIMMY MAKE IT VIMMY MAKE IT VIMMY MAKE I #
-#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
+# Make it vimmy
 
 bindkey -v
 bindkey -M viins 'jk' vi-cmd-mode
 export KEYTIMEOUT=10
 
 
-#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
-# PATH PATH PATH PATH PATH PATH PATH PATH PATH PATH PATH PATH PATH PATH PATH P #
-#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
+# Path
 
 export PATH=$HOME/.local/bin:/usr/local/Cellar/mozjpeg/3.3.1/bin:$HOME/bin:$PATH:/Users/$HOME/.local/bin:$HOME/:/Users/$HOME/Library/Haskell/bin
 
 
-#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
-# PYTHON PYTHON PYTHON PYTHON PYTHON PYTHON PYTHON PYTHON PYTHON PYTHON PYTHON #
-#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
+# Python stuff
 alias python="/usr/local/bin/python3"
 
-# Python path for VIPS usage.
+# Path for VIPS usage.
 # export PYTHONPATH="/usr/local/Cellar/vips/7.42.3/lib/python2.7/site-packages"
 
-#Python interactive session customization
+# Python interactive session customization
 export PYTHONSTARTUP=$HOME/.python/python_startup.py
 
 
-#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
-# TERM TERM TERM TERM TERM TERM TERM TERM TERM TERM TERM TERM TERM TERM TERM T #
-#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
-
-export TERM="screen-256color"
-
-
-#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
-# HELPFUL ALIASES HELPFUL ALIASES HELPFUL ALIASES HELPFUL ALIASES HELPFUL ALIA #
-#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
-
-# Because why not
-alias cmatrix="cmatrix -C cyan"
-# To start PostgreSQL server ("ctpg" + "start" or "stop")
-alias ctps="pg_ctl -D /usr/local/pgsql"
-# Open Chrome allowing cross-origin
-alias XOChrome="open -a 'Google Chrome' --args -allow-file-access-from-files"
-# Because default case-sensitive grep is annoying
-alias grep="grep -i"
-# For some reason irssi doesn't work with the default xterm settings so I'm 
-# aliasing it here
-alias irssi='TERM=screen-256color irssi'
-# To lolcat?
-alias ll='ls -lhFA'
-
-
-#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
-# SERVER ADDRESSES SERVER ADDRESSES SERVER ADDRESSES SERVER ADDRESSES SERVER A #
-#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
+# Server addressess
 
 RIES="192.34.59.235"
 RBG="ashenrose@104.236.103.218"
@@ -79,9 +44,7 @@ PERSONAL="162.243.78.100"
 ACAD="104.236.87.217"
 HI="104.131.184.246"
 
-#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
-# PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT #
-#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
+# Prompt
 
 # All info from `man zshmisc`
 # NB: Search "colour," not "color," for color expansion info
@@ -126,9 +89,24 @@ zle -N zle-line-init
 
 export RPROMPT=$'$(vcs_info_wrapper)'
 
-#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
-# TEMP VARS TEMP VARS TEMP VARS TEMP VARS TEMP VARS TEMP VARS TEMP VARS TEMP V #
-#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
+
+# Miscellaneuous
+
+export TERM="screen-256color"
+
+# Because why not
+alias cmatrix="cmatrix -C cyan"
+# To start PostgreSQL server ("ctpg" + "start" or "stop")
+alias ctps="pg_ctl -D /usr/local/pgsql"
+# Open Chrome allowing cross-origin
+alias XOChrome="open -a 'Google Chrome' --args -allow-file-access-from-files"
+# Because default case-sensitive grep is annoying
+alias grep="grep -i"
+# For some reason irssi doesn't work with the default xterm settings so I'm 
+# aliasing it here
+alias irssi='TERM=screen-256color irssi'
+# To lolcat?
+alias ll='ls -lhFA'
 
 # `pman` is nicer `man` styling that opens in Preview
 pman() {
