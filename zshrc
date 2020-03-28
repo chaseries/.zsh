@@ -1,11 +1,3 @@
-#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
-# ZSH STUFF ZSH STUFF ZSH STUFF ZSH STUFF ZSH STUFF ZSH STUFF ZSH STUFF ZSH ST #
-#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
-
-ZSH=$HOME/.oh-my-zsh
-plugins=(git)
-source $ZSH/oh-my-zsh.sh
-
 
 #$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
 # RELOAD MESSAGE RELOAD MESSAGE RELOAD MESSAGE RELOAD MESSAGE RELOAD MESSAGE R #
@@ -13,7 +5,7 @@ source $ZSH/oh-my-zsh.sh
 
 autoload -U colors
 clear
-echo "\n   Welcome to the shell.▋"
+echo "\n   Welcome to the shell."
 echo "\n   There is more to be seen than we have left behind,"
 echo "   but in truth, only atoms and the void.\n"
 
@@ -31,7 +23,7 @@ export KEYTIMEOUT=10
 # PATH PATH PATH PATH PATH PATH PATH PATH PATH PATH PATH PATH PATH PATH PATH P #
 #$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
 
-export PATH=$HOME/bin:$PATH:/Users/jules/.local/bin:$HOME/:/Users/jules/Library/Haskell/bin
+export PATH=$HOME/.local/bin:/usr/local/Cellar/mozjpeg/3.3.1/bin:$HOME/bin:$PATH:/Users/$HOME/.local/bin:$HOME/:/Users/$HOME/Library/Haskell/bin
 
 
 #$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
@@ -76,7 +68,7 @@ alias ll='ls -lhFA'
 # SERVER ADDRESSES SERVER ADDRESSES SERVER ADDRESSES SERVER ADDRESSES SERVER A #
 #$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
 
-RIES="chaseries@192.34.59.235"
+RIES="192.34.59.235"
 RBG="ashenrose@104.236.103.218"
 RBGip="104.236.103.218"
 RBG2="159.203.99.186"
@@ -85,6 +77,7 @@ EAGLE="104.236.57.64"
 FREEDOM="45.55.145.40"
 PERSONAL="162.243.78.100"
 ACAD="104.236.87.217"
+HI="104.131.184.246"
 
 #$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
 # PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT PROMPT #
@@ -117,11 +110,11 @@ vcs_info_wrapper() {
 
 # show which vim mode we are in
 precmd() {
-  export PROMPT='教会 in %c @%t  %F{15}⚆%f  '
+  export PROMPT='リース・チェイス in %c @ %t  %F{15}⚆%f  '
 }
 zle-keymap-select() {
-  export PROMPT='教会 in %c @%t  %F{15}⚆%f  '
-  [[ $KEYMAP = vicmd ]] && export PROMPT='教会 in %c @%t  %F{243}⚇%f  '
+  export PROMPT='リース・チェイス in %c @ %t  %F{15}⚆%f  '
+  [[ $KEYMAP = vicmd ]] && export PROMPT='リース・チェイス in %c @ %t  %F{243}⚇%f  '
   () { return $__prompt_status }
   zle reset-prompt
 }
@@ -137,3 +130,7 @@ export RPROMPT=$'$(vcs_info_wrapper)'
 # TEMP VARS TEMP VARS TEMP VARS TEMP VARS TEMP VARS TEMP VARS TEMP VARS TEMP V #
 #$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$
 
+# `pman` is nicer `man` styling that opens in Preview
+pman() {
+  man -t "${1}" | open -f -a /Applications/Preview.app/
+}
